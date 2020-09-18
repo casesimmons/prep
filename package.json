@@ -1,0 +1,27 @@
+{
+  "name": "prep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "models.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casesimmons/prep.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/casesimmons/prep/issues"
+  },
+  "homepage": "https://github.com/casesimmons/prep#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
