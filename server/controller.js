@@ -1,6 +1,9 @@
+// REQUIRE MODELS.JS AND ASSIGN IT TO VARIABLE DB
 const db = require('./models');
-
+// DECLARE VARIABLE CONTROLLER AND ASSIGN TO EMPTY OBJECT
 const controller = {};
+
+// BUILD MIDDLEWARE CRUD METHODS ONTO CONTROLLER OBJ
 
 // GET ALL FROM DB MIDDLEWARE
 controller.getData = (req, res, next) => {
@@ -65,6 +68,7 @@ controller.deleteEntry = (req, res, next) => {
   const values = [_id];
   // QUERY FOR DELETE
   const queryText = `DELETE FROM todo WHERE _id = $1 RETURNING *;`;
+  // QUERY DB
   db.query(queryText, values)
     .then((dbResult) => {
       res.locals.deletedEntry = dbResult.rows[0];
@@ -76,4 +80,5 @@ controller.deleteEntry = (req, res, next) => {
     });
 };
 
+// EXPORT CONTROLLER
 module.exports = controller;

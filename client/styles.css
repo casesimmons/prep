@@ -1,3 +1,13 @@
-:root {
-  background-color: darkgreen;
+body {
+  background-color: rgb(0, 100, 93);
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1text {
+  color: rgb(105, 231, 216);
 }
