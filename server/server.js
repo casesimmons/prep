@@ -18,14 +18,19 @@ app.use(cors());
 app.use(express.json());
 // HANDLE FORM DATA CORRECTLY
 app.use(express.urlencoded({ extended: true }));
+
+
 // SERVE STATIC FILES
 app.use(express.static('client'));
+
 
 // app.post(//when we post, take in endpoint, middleware, cb)
 app.use('/api', router);
 // app.put(//when we post, take in endpoint, middleware, cb)
 // app.delete(//when we post, take in endpoint, middleware, cb)
 
+
+// GLOBAL CATCH ALL HANDLER
 app.use('/', (err, req, res, next) => {
   console.log(err);
 });
