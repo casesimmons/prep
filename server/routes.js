@@ -9,7 +9,10 @@ const router = express.Router();
 // PASS IN COOKIE PARSER INVOCATION TO ROUTER
 router.use(munch());
 
-// ROUTE GET REQUEST WITH MIDDLEWARE GETDATA + ADD COOKIES
+
+
+
+// READ METHOD (query all items in DB)
 router.get('/', controller.getData, (req, res) => {
   // COOKIE TEST
   console.log(req.cookies);
@@ -20,6 +23,14 @@ router.get('/', controller.getData, (req, res) => {
 
   // SEND BACK ON RESPONSE STATUS, COOKIE, AND JSON DATA FROM QUERY
   res.status(200).cookie('raisin', 7).json(res.locals.info);
+});
+
+
+
+
+// CREATE ONE ENTRY IN OUR DB
+router.post('/', controller.createEntry, (req, res) => {
+  res.status(200).json(res.locals.newEntry);
 });
 
 module.exports = router;

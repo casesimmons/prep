@@ -5,11 +5,14 @@ const path = require('path');
 
 // PORT NUMBER
 const PORT = 2222;
+// REQUIRE CORS IN CASE OF API CALLS
 const cors = require('cors');
+// IMPORT URLENCODED FROM BODY-PARSER
 const { urlencoded } = require('body-parser');
+// DONT KNOW WHAT THIS IS
 const { dir } = require('console');
 
-// IMPORT ROUTER
+// IMPORT ROUTER FROM ROUTES.JS
 const router = require('./routes.js');
 
 // PREVENT CORS ERRORS
@@ -19,16 +22,13 @@ app.use(express.json());
 // HANDLE FORM DATA CORRECTLY
 app.use(express.urlencoded({ extended: true }));
 
-
 // SERVE STATIC FILES
 app.use(express.static('client'));
-
 
 // app.post(//when we post, take in endpoint, middleware, cb)
 app.use('/api', router);
 // app.put(//when we post, take in endpoint, middleware, cb)
 // app.delete(//when we post, take in endpoint, middleware, cb)
-
 
 // GLOBAL CATCH ALL HANDLER
 app.use('/', (err, req, res, next) => {
@@ -36,5 +36,5 @@ app.use('/', (err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log('yall listening on 2222');
+  console.log('Listening on Port 2222');
 });
